@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "sodiumcoreshadersupport",
+	"version": "${version}",
+	"name": "SodiumCoreShaderSupport",
+	"description": "Enables resourcepacks to replace sodium's shaders, similar to resourcepacks being able to replace vanilla's core shaders.",
+	"authors": [
+		"LinusDev"
+	],
+	"contact": {
+		"homepage": "https://linusdev.de/",
+		"sources": "https://github.com/lni-dev/sodiumcoreshadersupport"
+	},
+	"license": "Apache License 2.0",
+	"icon": "assets/sodiumcoreshadersupport/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"de.linusdev.SodiumCoreShaderSupport"
+		]
+	},
+	"mixins": [
+		"sodiumcoreshadersupport.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"minecraft": ${minecraft_version},
+		"java": ">=17",
+		"fabric-api": "*",
+		"sodium": "${sodium_version}"
+	},
+	"suggests": {}
+}

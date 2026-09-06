@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "de.linusdev.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinChunkShaderOptions",
+    "MixinGLProgram",
+    "MixinResourcePackProfile",
+    "MixinShaderLoader"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "MixinAbstractPack",
+    "MixinPackListWidget",
+    "MixinResourcePackEntry"
+  ]
+}
