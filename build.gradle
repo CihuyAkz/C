@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.+'
+	id 'fabric-loom' version '1.7.4'          // FIXED: sebelumnya '1.+' → error Java 25
 	id 'maven-publish'
 	id "com.modrinth.minotaur" version "2.+"
 	id 'com.matthewprenger.cursegradle' version '1.+'
@@ -8,7 +8,7 @@ plugins {
 def sodium_versions = sodium_version.split("-")
 def isSodiumBeta = sodium_versions.length > 2 && sodium_versions[2].contains("beta")
 
-def upload_ready_mod_version =  "mc${minecraft_version}-${project.mod_version}-sodium${sodium_versions[1]}"
+def upload_ready_mod_version =  "mc\( {minecraft_version}- \){project.mod_version}-sodium${sodium_versions[1]}"
 if(isSodiumBeta) upload_ready_mod_version += sodium_versions[2]
 
 def supp_mc_versions = new ArrayList<String>();
@@ -133,7 +133,7 @@ java {
 
 jar {
 	from("LICENSE") {
-		rename { "${it}_${project.base.archivesName.get()}"}
+		rename { "\( {it}_ \){project.base.archivesName.get()}"}
 	}
 }
 
